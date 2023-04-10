@@ -8,7 +8,7 @@ Group=hrutik
 WorkingDirectory=/home/hrutik/app/src/
 Environment="PATH=/home/hrutik/app/venv/bin"
 EnvironmentFile=/home/hrutik/.env
-ExecStart=/home/hrutik/app/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
+ExecStart=/home/hrutik/app/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 10.182.0.2:8000
 
 [Install]
 WantedBy=multi-user.target
