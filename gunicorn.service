@@ -1,0 +1,14 @@
+[Unit]
+Description=gunicorn instance to serve api
+After=network.target
+
+[Service]
+User=hrutik
+Group=hrutik
+WorkingDirectory=/home/hrutik/app/src/
+Environment="PATH=/home/hrutik/app/venv/bin"
+EnvironmentFile=/home/hrutik/.env
+ExecStart=/home/hrutik/app/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker app.main:app --bind 0.0.0.0:8000
+
+[Install]
+WantedBy=multi-user.target
